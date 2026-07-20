@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Looped Creative Studio is a premium creative and digital studio for websites, branding, strategy, SEO, content, AI integration, automation, and business systems." />
-  <title>Looped Creative Studio | Strategy, Design & Digital Experiences</title>
+  <meta name="description" content="Looped Design Studio creates branding, websites, creative systems, AI tools, and digital experiences shaped around your ideas." />
+  <title>Looped Design Studio | Branding, Websites & Creative Systems</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <div class="page-loader" aria-hidden="true"><span>Looped Creative Studio</span></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <div class="page-loader" aria-hidden="true">
+    <div class="loader-card">
+      <svg class="loader-loop" viewBox="0 0 240 120" role="img" aria-label="Animated infinity loop">
+        <path d="M120 60 C86 13 25 13 25 60 C25 107 86 107 120 60 C154 13 215 13 215 60 C215 107 154 107 120 60" />
+      </svg>
+      <strong>LOOPED</strong>
+      <span>Design Studio</span>
+    </div>
+  </div>
+
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-header>
+  <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="logo" href="#home" aria-label="Looped Creative Studio home">
-        <span class="logo-mark">Looped</span>
-        <span class="logo-subline">Creative Studio</span>
+      <a class="logo" href="#home" aria-label="Looped Design Studio home">
+        <span class="logo-infinity">∞</span>
+        <span><strong>LOOPED</strong><em>Design Studio</em></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -27,122 +40,110 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta magnetic" href="#contact">Start a Project</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero section" id="home" aria-labelledby="hero-title">
+    <section class="hero section comic-section" id="home" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Strategy · Design · Digital Experiences</p>
-        <h1 id="hero-title">Brands do not become unforgettable by accident.</h1>
-        <p class="hero-text">Looped Creative Studio brings strategy, design, storytelling, technology, and systems together to create brands and digital experiences people remember.</p>
+        <p class="eyebrow">Creative systems with a pulse</p>
+        <h1 id="hero-title">Designed by instinct.<br />Built with intention.</h1>
+        <p class="hero-text">Branding, websites, creative systems, AI tools, and digital experiences shaped around your ideas, your goals, and the people you want to reach.</p>
         <div class="button-row">
-          <a class="button primary" href="#contact">Start Your Project</a>
-          <a class="button secondary" href="#work">View Our Work</a>
+          <a class="button primary magnetic burstable" href="#contact">Start Your Project <span>∞</span></a>
+          <a class="button secondary magnetic burstable" href="#about">Explore the Studio</a>
         </div>
       </div>
-      <div class="hero-visual reveal" aria-label="CSS illustration of a refined creative director workspace with laptop, design materials, warm lighting, and marble details" role="img">
-        <div class="marble-panel"></div>
-        <div class="desk-glow"></div>
-        <div class="laptop"><span></span></div>
-        <div class="moodboard board-one"></div>
-        <div class="moodboard board-two"></div>
-        <div class="gold-line line-one"></div>
-        <div class="gold-line line-two"></div>
-        <p class="visual-note">CSS workspace composition — replace with custom studio photography in assets/images/ when available.</p>
+      <div class="hero-art reveal" data-parallax data-tilt-panel aria-label="Animated comic infinity composition with ideas and digital tools" role="img">
+        <div class="motion-lines"></div>
+        <svg class="hero-infinity" viewBox="0 0 420 250" aria-hidden="true">
+          <path class="infinity-shadow" d="M210 125 C148 35 40 35 40 125 C40 215 148 215 210 125 C272 35 380 35 380 125 C380 215 272 215 210 125" />
+          <path class="infinity-path" d="M210 125 C148 35 40 35 40 125 C40 215 148 215 210 125 C272 35 380 35 380 125 C380 215 272 215 210 125" />
+        </svg>
+        <span class="orbit idea">IDEA!</span><span class="orbit cursor-dot">⌁</span><span class="orbit swatch"></span><span class="orbit screen">WEB</span>
+        <div class="speech bubble-one">What if?</div><div class="speech bubble-two">Make it move.</div>
+        <div class="tool-card card-a">AI<br />SYSTEMS</div><div class="tool-card card-b">COLOR<br />SPARK</div>
+        <div class="sticker sticker-hot">POP</div><div class="sticker sticker-cyan">CLICK</div>
       </div>
     </section>
 
-    <section class="brand-statement section" aria-labelledby="statement-title">
-      <div class="statement-text reveal">
-        <p class="section-kicker">Brand Memory</p>
-        <h2 id="statement-title">Your audience should remember the feeling before they remember the logo.</h2>
-      </div>
-      <div class="statement-panel reveal">
-        <p>We create the strategy, identity, digital presence, and systems that make every part of your business feel intentional, connected, and unmistakably yours.</p>
+    <section class="intro section" aria-labelledby="intro-title">
+      <div class="spread-panel loud reveal"><p class="eyebrow">Open the spread</p><h2 id="intro-title">Your ideas lead.<br />We help bring them to life.</h2></div>
+      <div class="spread-panel conversation reveal">
+        <p>Looped Design Studio is a collaborative creative studio. We listen first, build with purpose, and create brands, websites, content, and systems that feel unmistakably yours.</p>
+        <div class="chat-bubbles" aria-hidden="true"><span>Your goal</span><span>Our craft</span><span>One connected loop</span></div>
       </div>
     </section>
 
-    <section class="services section" id="services" aria-labelledby="services-title">
-      <div class="section-heading reveal">
-        <p class="section-kicker">Services</p>
-        <h2 id="services-title">Creative direction with digital substance.</h2>
+    <section class="services section comic-section" id="services" aria-labelledby="services-title">
+      <div class="section-heading reveal"><p class="eyebrow">Services</p><h2 id="services-title">Everything your business needs to look connected, feel intentional, and keep moving.</h2></div>
+      <div class="services-grid">
+        <article class="service-card reveal" style="--accent:#D6A83E"><button class="service-toggle" aria-expanded="false"><span>01</span><strong>Brand Identity &amp; Creative Direction</strong><em>+</em></button><p>Positioning, logos, typography, color, messaging, and visual systems shaped around the personality of your business.</p><a href="#contact" data-service="Brand Identity & Creative Direction">Start with this service</a><i aria-hidden="true">✦</i></article>
+        <article class="service-card reveal" style="--accent:#00C7E8"><button class="service-toggle" aria-expanded="false"><span>02</span><strong>Website Design &amp; Development</strong><em>+</em></button><p>Responsive, expressive websites that are easy to navigate, visually memorable, and built around real business goals.</p><a href="#contact" data-service="Website Design & Development">Start with this service</a><i aria-hidden="true">⌘</i></article>
+        <article class="service-card reveal" style="--accent:#8B5CF6"><button class="service-toggle" aria-expanded="false"><span>03</span><strong>Graphic Design &amp; Campaign Assets</strong><em>+</em></button><p>Social graphics, campaign visuals, digital materials, print pieces, and branded assets that keep every touchpoint consistent.</p><a href="#contact" data-service="Graphic Design & Campaign Assets">Start with this service</a><i aria-hidden="true">✎</i></article>
+        <article class="service-card reveal" style="--accent:#EC4899"><button class="service-toggle" aria-expanded="false"><span>04</span><strong>Content &amp; Social Storytelling</strong><em>+</em></button><p>Creative direction, content planning, social systems, and visual storytelling designed to help your business communicate clearly.</p><a href="#contact" data-service="Content & Social Storytelling">Start with this service</a><i aria-hidden="true">❞</i></article>
+        <article class="service-card reveal" style="--accent:#2563EB"><button class="service-toggle" aria-expanded="false"><span>05</span><strong>SEO &amp; Digital Strategy</strong><em>+</em></button><p>Search-aware structure, messaging, user journeys, and digital planning that help the right people understand and find you.</p><a href="#contact" data-service="SEO & Digital Strategy">Start with this service</a><i aria-hidden="true">⌕</i></article>
+        <article class="service-card reveal" style="--accent:#FF5A36"><button class="service-toggle" aria-expanded="false"><span>06</span><strong>AI Automation &amp; Business Systems</strong><em>+</em></button><p>Practical AI tools, workflows, content systems, and automations that reduce repetitive work and support growth.</p><a href="#contact" data-service="AI Automation & Business Systems">Start with this service</a><i aria-hidden="true">⚡</i></article>
       </div>
-      <div class="services-layout">
-        <article class="service-feature reveal">
-          <span>01</span>
-          <h3>Website Design &amp; Development</h3>
-          <p>We build digital places people remember—beautiful, responsive experiences designed to guide, connect, and convert.</p>
-        </article>
-        <article class="service-slab reveal"><h3>Branding &amp; Visual Identity</h3><p>Your brand should be recognized before the logo is even seen. We shape the visual and verbal details that make it unmistakably yours.</p></article>
-        <article class="service-slab dark reveal"><h3>Graphic Design</h3><p>From launch campaigns to print-ready pieces, every design should feel like it belongs to the same story.</p></article>
-        <article class="service-slab reveal"><h3>SEO &amp; Digital Strategy</h3><p>A beautiful website still needs to be found. We build visibility into the structure from the beginning.</p></article>
-        <article class="service-wide reveal"><h3>Social Media &amp; Content</h3><p>Content should not only fill a feed. It should make someone stop, feel something, and remember who said it.</p></article>
-        <article class="service-wide systems reveal"><h3>AI, Automation &amp; Business Systems</h3><p>We connect the tools, workflows, and technology that help the business behind the brand run more smoothly.</p></article>
-      </div>
-    </section>
-
-    <section class="work section" id="work" aria-labelledby="work-title">
-      <div class="section-heading reveal">
-        <p class="section-kicker">Selected Work</p>
-        <h2 id="work-title">Work created to be seen, felt, and remembered.</h2>
-      </div>
-      <div class="work-grid">
-        <article class="project reveal"><div class="project-visual navy-marble" role="img" aria-label="Navy marble and gold visual placeholder for Now-Elevate"></div><p>Brand &amp; Website Direction</p><h3>Now-Elevate</h3><span>A composed digital presence shaped for clarity, movement, and elevated positioning.</span><a href="#contact">Coming Soon</a></article>
-        <article class="project reveal"><div class="project-visual stone" role="img" aria-label="Cream stone visual placeholder for CoolVu Savannah–Hilton Head"></div><p>Local Digital Experience</p><h3>CoolVu Savannah–Hilton Head</h3><span>A service-focused experience designed to feel polished, direct, and easy to navigate.</span><a href="#contact">Coming Soon</a></article>
-        <article class="project reveal"><div class="project-visual ink" role="img" aria-label="Charcoal and gold visual placeholder for Black Ink Solutions"></div><p>Strategic Identity</p><h3>Black Ink Solutions</h3><span>A sharp brand presence built around structure, confidence, and refined communication.</span><a href="#contact">Coming Soon</a></article>
-        <article class="project reveal"><div class="project-visual velvet" role="img" aria-label="Deep editorial visual placeholder for Velvet Wreckage"></div><p>Visual World</p><h3>Velvet Wreckage</h3><span>A mood-rich creative direction balancing edge, emotion, and memorable visual detail.</span><a href="#contact">Coming Soon</a></article>
-        <article class="project reveal"><div class="project-visual memoir" role="img" aria-label="Warm ivory visual placeholder for Broken Memoirs"></div><p>Creative Identity</p><h3>Broken Memoirs</h3><span>A story-led identity system designed for atmosphere, recognition, and emotional texture.</span><a href="#contact">Coming Soon</a></article>
-        <article class="project reveal"><div class="project-visual studio" role="img" aria-label="Premium studio visual placeholder for Looped Creative Studio"></div><p>Studio Brand</p><h3>Looped Creative Studio</h3><span>The studio identity: intentional, cinematic, strategic, and built as a connected digital system.</span><a href="#contact">View Project</a></article>
-      </div>
-    </section>
-
-    <section class="why section" aria-labelledby="why-title">
-      <div class="why-copy reveal"><p class="section-kicker">Why Looped</p><h2 id="why-title">Beautiful is only the beginning.</h2><p>Every project is built to look exceptional, communicate clearly, and support the way your business actually works.</p></div>
-      <ul class="why-list reveal">
-        <li>Strategy before decoration</li><li>Design with emotional weight</li><li>Clear and intentional messaging</li><li>Responsive digital experiences</li><li>SEO-aware foundations</li><li>Systems designed for growth</li>
-      </ul>
     </section>
 
     <section class="process section" id="process" aria-labelledby="process-title">
-      <div class="section-heading reveal"><p class="section-kicker">Process</p><h2 id="process-title">A clear path from idea to launch.</h2></div>
-      <div class="process-line">
-        <article class="step reveal"><span>01</span><h3>Listen</h3><p>We begin with your goals, audience, offers, challenges, and the feeling you want the brand to leave behind.</p></article>
-        <article class="step reveal"><span>02</span><h3>Shape</h3><p>We define the strategy, structure, voice, visual direction, and experience before design begins.</p></article>
-        <article class="step reveal"><span>03</span><h3>Create</h3><p>We design, write, build, refine, and connect every element into one cohesive experience.</p></article>
-        <article class="step reveal"><span>04</span><h3>Launch</h3><p>We test the details, prepare the final assets, and leave you with a clear path forward.</p></article>
+      <div class="section-heading reveal"><p class="eyebrow">Collaboration</p><h2 id="process-title">You bring the vision.<br />We build with you.</h2><p>You are not handing your business to a black box. Every project is collaborative, transparent, and shaped through real conversation.</p></div>
+      <div class="process-track" aria-label="Project process"><div class="process-loop" aria-hidden="true">∞</div>
+        <article class="frame reveal"><span>01</span><h3>Listen</h3><p>We learn your goals, audience, personality, challenges, and what you want the finished experience to feel like.</p></article>
+        <article class="frame reveal"><span>02</span><h3>Shape</h3><p>We organize the ideas, define the direction, and build a clear strategy before designing.</p></article>
+        <article class="frame reveal"><span>03</span><h3>Create</h3><p>We design, write, develop, test, refine, and connect every element into one cohesive system.</p></article>
+        <article class="frame reveal"><span>04</span><h3>Launch &amp; Grow</h3><p>We prepare the final experience, help you understand what comes next, and create room for the business to evolve.</p></article>
+      </div>
+    </section>
+
+    <section class="why section comic-section" aria-labelledby="why-title">
+      <div class="section-heading reveal"><p class="eyebrow">Why Looped</p><h2 id="why-title">Creative does not mean confusing.</h2></div>
+      <div class="caption-grid">
+        <article class="caption reveal"><h3>Collaborative</h3><p>Your ideas and feedback remain part of the process from beginning to end.</p></article>
+        <article class="caption reveal"><h3>Intentional</h3><p>Every visual decision should serve a purpose, not simply fill space.</p></article>
+        <article class="caption reveal"><h3>Clear</h3><p>You should always understand what is happening, what comes next, and why.</p></article>
+        <article class="caption reveal"><h3>Built to Evolve</h3><p>The final design should support where your business is going, not only where it is today.</p></article>
       </div>
     </section>
 
     <section class="about section" id="about" aria-labelledby="about-title">
-      <div class="portrait-placeholder reveal" role="img" aria-label="Placeholder for future founder portrait or studio workspace photography"><span>Future founder portrait or studio workspace image</span></div>
-      <div class="about-copy reveal"><p class="section-kicker">About</p><h2 id="about-title">A creative studio built for businesses with more than one moving part.</h2><p>Looped Creative Studio was created for entrepreneurs, growing businesses, and purpose-driven brands that need more than a logo or a website. We bring the visual, strategic, technical, and operational pieces together so the brand feels as strong behind the scenes as it looks from the outside.</p></div>
+      <div class="founder-placeholder reveal" role="img" aria-label="Placeholder area for a future real founder image"><span>Replace with real founder image in assets/images/founder-image.*</span></div>
+      <div class="about-copy reveal"><p class="eyebrow">About</p><h2 id="about-title">A creative studio built from real-world experience.</h2><p>Looped Design Studio brings creative direction, digital strategy, business operations, emerging technology, and practical problem-solving together in one place.</p><p>The studio was created for entrepreneurs, service businesses, creative brands, veteran-owned companies, medical practices, and growing teams that need more than disconnected design pieces.</p><p>We believe branding, websites, content, and business systems should work together. The result should look good, feel clear, support the customer experience, and make the business easier to operate.</p></div>
     </section>
 
-    <section class="inquiry section" id="contact" aria-labelledby="contact-title">
-      <div class="inquiry-copy reveal"><p class="section-kicker">Project Inquiry</p><h2 id="contact-title">Ready to build something people remember?</h2><p>Tell us what you are creating, what feels disconnected, and where you want the business to go next.</p></div>
-      <form class="inquiry-form reveal" action="#" method="post">
-        <label>Name<input name="name" type="text" autocomplete="name" required /></label>
-        <label>Email<input name="email" type="email" autocomplete="email" required /></label>
-        <label>Business or brand name<input name="brand" type="text" /></label>
-        <label>Service needed<select name="service"><option>Website Design & Development</option><option>Branding & Visual Identity</option><option>Graphic Design</option><option>SEO & Digital Strategy</option><option>Social Media & Content</option><option>AI, Automation & Business Systems</option></select></label>
-        <label>Estimated project timeline<input name="timeline" type="text" placeholder="Example: 6–8 weeks" /></label>
-        <label class="full">Project details<textarea name="details" rows="5" required></textarea></label>
-        <p class="form-note">Front-end only. Connect later with Netlify Forms or Formspree as documented in README.md.</p>
-        <button class="button primary" type="submit">Send Inquiry</button>
+    <section class="manifesto" aria-label="Interactive manifesto">
+      <div class="manifesto-loop" aria-hidden="true">∞</div>
+      <p class="manifesto-line reveal">Ideas deserve movement.</p><p class="manifesto-line reveal">Design should feel human.</p><p class="manifesto-line reveal">Strategy gives creativity direction.</p><p class="manifesto-line reveal">Technology should make business easier.</p><p class="manifesto-line reveal">Your brand should still feel like you.</p>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-copy reveal"><p class="eyebrow">Project Inquiry</p><h2 id="contact-title">Let’s make something unmistakably yours.</h2><p>Tell us what you are building, what feels disconnected, and where you want the business to go next.</p></div>
+      <form class="inquiry-form reveal" name="project-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="project-inquiry" /><p class="hidden"><label>Do not fill this out <input name="bot-field" /></label></p>
+        <label>Name <input name="name" type="text" autocomplete="name" required /><span class="error" aria-live="polite"></span></label>
+        <label>Email <input name="email" type="email" autocomplete="email" required /><span class="error" aria-live="polite"></span></label>
+        <label>Business or brand name <input name="brand" type="text" required /><span class="error" aria-live="polite"></span></label>
+        <label>Service needed <select name="service" required><option value="">Choose a service</option><option>Brand Identity & Creative Direction</option><option>Website Design & Development</option><option>Graphic Design & Campaign Assets</option><option>Content & Social Storytelling</option><option>SEO & Digital Strategy</option><option>AI Automation & Business Systems</option></select><span class="error" aria-live="polite"></span></label>
+        <label>Estimated timeline <input name="timeline" type="text" placeholder="Example: 6–8 weeks" required /><span class="error" aria-live="polite"></span></label>
+        <label>Estimated budget <input name="budget" type="text" placeholder="Example: $3,000–$6,000" required /><span class="error" aria-live="polite"></span></label>
+        <label class="full">Project details <textarea name="details" rows="5" required></textarea><span class="error" aria-live="polite"></span></label>
+        <label class="full">How did you hear about us? <input name="referral" type="text" /><span class="error" aria-live="polite"></span></label>
+        <button class="button primary magnetic burstable" type="submit">Send Inquiry <span>∞</span></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
   <footer class="footer">
-    <div><h2>Looped Creative Studio</h2><p>A premium creative and digital studio building intentional brands, websites, content, and business systems.</p></div>
-    <nav aria-label="Footer navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
-    <div class="footer-contact"><p>Email: <span>placeholder@example.com — update before launch</span></p><p>Instagram: <span>@placeholder — update before launch</span></p></div>
-    <p class="copyright">© <span data-year></span> Looped Creative Studio. Designed and built by Looped Creative Studio.</p>
+    <div><h2>Looped Design Studio</h2><p>Branding, websites, creative systems, AI tools, and digital experiences shaped around your ideas.</p></div>
+    <nav aria-label="Footer navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+    <div class="footer-contact"><p>Email: <span>hello@yourdomain.com</span></p><p>Instagram: <span>@loopeddesignstudio</span></p></div>
+    <p class="copyright">© <span data-year></span> Looped Design Studio. All rights reserved.</p>
   </footer>
   <script src="js/script.js" defer></script>
 </body>

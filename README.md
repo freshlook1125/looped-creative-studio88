@@ -1,6 +1,6 @@
-# Looped Creative Studio
+# Looped Design Studio
 
-A brand-new standalone one-page website for **Looped Creative Studio**, a premium creative and digital studio focused on strategy, design, websites, content, SEO, AI integration, automation, and digital systems.
+A standalone one-page website for **Looped Design Studio**, a funky comic-book-inspired creative studio experience for branding, websites, graphic design, content, strategy, AI systems, and creative technology.
 
 ## Project structure
 
@@ -13,116 +13,59 @@ A brand-new standalone one-page website for **Looped Creative Studio**, a premiu
 │   └── script.js
 ├── assets/
 │   ├── images/
-│   └── icons/
+│   ├── icons/
+│   ├── textures/
+│   └── comic-elements/
 └── README.md
 ```
 
-## How to preview with Live Server
+## How to preview
 
-1. Open this folder in VS Code.
-2. Install the **Live Server** extension if it is not already installed.
-3. Right-click `index.html`.
-4. Select **Open with Live Server**.
-5. Preview and test at desktop, laptop, tablet, and mobile widths.
-
-You can also preview with any static server, for example:
+Run a static server from the repository root:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then visit `http://localhost:4173` in a browser.
+Then visit `http://localhost:4173` in a browser and test desktop, laptop, tablet, and mobile widths.
 
-## Where to replace images
+## Where to add future comic artwork
 
-The current site uses polished CSS visual compositions and clearly labeled visual placeholders instead of blank rectangles. Replace these with final brand photography or project imagery in:
+The current site uses CSS-generated comic compositions and clearly labeled placeholders. Replace or extend artwork in these folders:
 
-```text
-assets/images/
-```
+- `assets/images/hero-infinity.placeholder` — future hero infinity illustration or animation reference.
+- `assets/images/founder-image.placeholder` — real founder image for the About section.
+- `assets/textures/halftone-texture.placeholder` — custom halftone or paper texture.
+- `assets/comic-elements/comic-burst.placeholder` — reusable burst artwork.
+- `assets/comic-elements/speech-bubbles.placeholder` — custom speech bubble artwork.
+- `assets/icons/service-icons.placeholder` — service icon set.
+- `assets/comic-elements/motion-lines.placeholder` — motion-line overlays.
+- `assets/comic-elements/ink-splatter.placeholder` — ink and grain accents.
+- `assets/comic-elements/doodle-pack.placeholder` — hand-drawn doodles and stickers.
 
-Suggested future files:
-
-- `studio-workspace.jpg` for the hero workspace visual
-- `founder-portrait.jpg` or `studio-interior.jpg` for the About section
-- `project-now-elevate.jpg`
-- `project-coolvu-savannah-hilton-head.jpg`
-- `project-black-ink-solutions.jpg`
-- `project-velvet-wreckage.jpg`
-- `project-broken-memoirs.jpg`
-- `project-looped-creative-studio.jpg`
-
-After adding images, update the relevant visual blocks in `index.html` and style them in `css/styles.css`.
+After adding production artwork, update the related sections in `index.html` and `css/styles.css`.
 
 ## Where to update contact links
 
 Update the footer placeholders in `index.html`:
 
-- Email placeholder: `placeholder@example.com — update before launch`
-- Instagram placeholder: `@placeholder — update before launch`
+- Email placeholder: `hello@yourdomain.com`
+- Instagram placeholder: `@loopeddesignstudio`
 
-If social icons are added later, place icon assets in:
+## Inquiry form
 
-```text
-assets/icons/
-```
+The inquiry form includes client-side validation and Netlify Forms-ready markup:
 
-## How to connect the inquiry form
+- `name="project-inquiry"`
+- `method="POST"`
+- `data-netlify="true"`
+- hidden `form-name` field
+- honeypot field
 
-The inquiry form is front-end only for now.
-
-### Netlify Forms
-
-To connect with Netlify Forms later:
-
-1. Add `data-netlify="true"` to the `<form>` element.
-2. Add a hidden form-name field.
-3. Set a real form name, for example `name="project-inquiry"`.
-4. Deploy the static site to Netlify.
-
-Example:
-
-```html
-<form class="inquiry-form" name="project-inquiry" method="post" data-netlify="true">
-  <input type="hidden" name="form-name" value="project-inquiry" />
-</form>
-```
-
-### Formspree
-
-To connect with Formspree later:
-
-1. Create a Formspree form endpoint.
-2. Replace the form `action="#"` with the Formspree endpoint URL.
-3. Keep `method="post"`.
-4. Test submissions before launch.
-
-Example:
-
-```html
-<form class="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post">
-```
-
-## How to deploy later
-
-This is a static website and can be deployed to:
-
-- Netlify
-- Vercel
-- GitHub Pages
-- Cloudflare Pages
-- Any static hosting provider
-
-General deployment steps:
-
-1. Commit the project to a Git repository.
-2. Connect the repository to the hosting provider.
-3. Use the repository root as the publish directory.
-4. No build command is required.
-5. Add final contact links and production imagery before launch.
+It intentionally does not claim a custom backend. If deploying somewhere other than Netlify, connect the form to the chosen form handling service before launch.
 
 ## Notes
 
-- The homepage is the only HTML page intentionally created for this version.
-- The site includes smooth scrolling, reveal animations, subtle shimmer accents, a loading transition, accessible navigation, visible focus states, responsive layouts, and reduced-motion support.
-- No testimonials, statistics, awards, or unsupported claims have been added.
+- The homepage is the only HTML page for this version.
+- The site includes smooth anchor scrolling, reveal animations, loading animation, animated infinity motifs, service accordion cards, mobile navigation, accessible focus states, responsive layouts, and reduced-motion support.
+- No unsupported claims, reviews, client names, unrelated brands, portfolio pieces, or fake statistics have been added.

@@ -1,47 +1,10 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-const year = document.querySelector('[data-year]');
-
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
-
-if (navToggle && navMenu) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  navMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-const revealItems = document.querySelectorAll('.reveal');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (prefersReducedMotion) {
-  revealItems.forEach((item) => item.classList.add('visible'));
-} else {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealItems.forEach((item) => observer.observe(item));
-}
-
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && navMenu?.classList.contains('open')) {
-    navMenu.classList.remove('open');
-    navToggle?.setAttribute('aria-expanded', 'false');
-    navToggle?.focus();
-  }
-});
+const root=document.documentElement;const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;const navToggle=document.querySelector('.nav-toggle');const navMenu=document.querySelector('.nav-menu');const year=document.querySelector('[data-year]');const cursor=document.querySelector('.cursor');const trail=document.querySelector('.cursor-trail');const progress=document.querySelector('.scroll-progress span');if(year)year.textContent=new Date().getFullYear();
+if(navToggle&&navMenu){navToggle.addEventListener('click',()=>{const open=navMenu.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(open));});navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navMenu.classList.remove('open');navToggle.setAttribute('aria-expanded','false')}));}
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&navMenu?.classList.contains('open')){navMenu.classList.remove('open');navToggle?.setAttribute('aria-expanded','false');navToggle?.focus();}});
+if(!reduced){const revealItems=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target);}}),{threshold:.14});revealItems.forEach(item=>io.observe(item));}else{document.querySelectorAll('.reveal').forEach(item=>item.classList.add('visible'));}
+if(!reduced&&matchMedia('(pointer:fine)').matches){let tx=0,ty=0;window.addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;cursor.style.transform=`translate(${tx}px,${ty}px) translate(-50%,-50%)`;root.style.setProperty('--mx',`${(e.clientX/window.innerWidth-.5)*10}px`);root.style.setProperty('--my',`${(e.clientY/window.innerHeight-.5)*10}px`);});function chase(){const rect=trail.getBoundingClientRect();const x=rect.left+rect.width/2;const y=rect.top+rect.height/2;trail.style.transform=`translate(${x+(tx-x)*.2}px,${y+(ty-y)*.2}px) translate(-50%,-50%)`;requestAnimationFrame(chase)}chase();document.querySelectorAll('[data-tilt-panel]').forEach(panel=>{panel.addEventListener('pointermove',e=>{const r=panel.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;panel.style.transform=`perspective(900px) rotateX(${y*-4}deg) rotateY(${x*4}deg)`});panel.addEventListener('pointerleave',()=>panel.style.transform='')});document.querySelectorAll('.magnetic').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.16}px,${(e.clientY-r.top-r.height/2)*.16}px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});}
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=`${Math.max(0,scrollY/max*100)}%`;document.querySelectorAll('[data-parallax]').forEach(el=>{if(!reduced)el.style.setProperty('--parallax',`${scrollY*.02}px`)})},{passive:true});
+document.querySelectorAll('.service-toggle').forEach(btn=>{btn.addEventListener('click',()=>{const card=btn.closest('.service-card');const open=card.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));btn.querySelector('em').textContent=open?'−':'+';});});
+document.querySelectorAll('[data-service]').forEach(link=>{link.addEventListener('click',()=>{const select=document.querySelector('select[name="service"]');if(select)select.value=link.dataset.service;});});
+document.querySelectorAll('.burstable').forEach(el=>el.addEventListener('click',e=>{if(reduced)return;const b=document.createElement('span');b.className='comic-burst';b.style.left=`${e.clientX}px`;b.style.top=`${e.clientY}px`;document.body.appendChild(b);setTimeout(()=>b.remove(),460);}));
+const form=document.querySelector('.inquiry-form');if(form){form.addEventListener('submit',e=>{let valid=true;form.querySelectorAll('[required]').forEach(field=>{const err=field.closest('label')?.querySelector('.error');let msg='';if(!field.value.trim())msg='This field is required.';if(field.type==='email'&&field.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value))msg='Enter a valid email address.';if(err)err.textContent=msg;field.setAttribute('aria-invalid',msg?'true':'false');if(msg)valid=false;});if(!valid){e.preventDefault();form.querySelector('[aria-invalid="true"]')?.focus();return;}e.preventDefault();form.querySelector('.form-status').textContent='Thanks — your inquiry is ready. Connect this Netlify-ready form during deployment to receive submissions.';form.reset();});}
